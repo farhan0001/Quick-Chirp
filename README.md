@@ -83,11 +83,11 @@ The project follows a **3-tier architecture**:
 
 6. Subscription Modal
 
-[Subscription Modal](app_screenshots/Subscription_Modal.png)
+![Subscription Modal](app_screenshots/Subscription_Modal.png)
 
 7. Profile Page
 
-[Profile Page](app_screenshots/Profile_Page.png)
+![Profile Page](app_screenshots/Profile_Page.png)
 
 8. Edit Profile Modal
 
