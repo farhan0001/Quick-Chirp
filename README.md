@@ -1,13 +1,22 @@
 
-# Twitter Clone - Full Stack Project
+# Quick Chirp - Full Stack Project
 
 ## Overview
-This project is a **Twitter Clone**, designed as a full-stack application using **React** for the frontend and **Spring Boot** for the backend. It replicates core functionalities of Twitter, allowing users to create accounts, post tweets, follow other users, and view a real-time feed. This project demonstrates scalable, modern web development practices and serves as a comprehensive showcase of full-stack development skills.
+Quick Chirp is a full-stack application inspired by Twitter. Designed to showcase modern, scalable web development practices, it uses **React** for the frontend and **Spring Boot** for the backend. The application replicates core functionalities of a social media platform, allowing users to:
+
+- Create accounts
+- Post chirps (tweets)
+- Follow other users
+- View a real-time feed
+
+This project serves as a comprehensive demonstration of full-stack development skills, combining intuitive user interfaces with a robust backend architecture.
 
 ## Features
 - **User Authentication**: Secure user registration and login using JWT authentication.
-- **Tweet Management**: Create, edit, delete, and view tweets.
-- **Follow System**: Follow and unfollow users to personalize your feed.
+- **Tweet Management**: Create, edit, delete, and view chirps.
+- **Real-Time Feed**: See the latest posts from users you follow.
+- **Chirp Creation**: Post short messages (chirps) with ease.
+- **Follow System**: Follow and unfollow other users to personalize your feed.
 
 ## Tech Stack
 ### Frontend
@@ -20,13 +29,13 @@ This project is a **Twitter Clone**, designed as a full-stack application using 
 ### Backend
 - **Spring Boot**: For creating a robust and scalable REST API.
 - **Spring Security 6**: For authentication and authorization.
-- **MySQL**: As the relational database for persistent data storage.
+- **MySQL**: As the relational database for persistent user and chirp data storage.
 
 ## System Architecture
 The project follows a **3-tier architecture**:
 1. **Frontend**: Handles user interaction and communicates with the backend via REST APIs.
 2. **Backend**: Processes business logic and provides API endpoints.
-3. **Database**: Stores user information, tweets, and follower data.
+3. **Database**: Stores user information, chirps, and follower data.
 
 ## Installation and Setup
 ### Prerequisites
@@ -77,9 +86,9 @@ The project follows a **3-tier architecture**:
 
 ![Home Page](app_screenshots/Home_Page.png)
 
-5. Tweet Reply Modal
+5. Chirp Reply Modal
 
-![Tweet Reply](app_screenshots/Tweet_Reply_Modal.png)
+![Chirp Reply](app_screenshots/Chirp_Reply_Modal.png)
 
 6. Subscription Modal
 
