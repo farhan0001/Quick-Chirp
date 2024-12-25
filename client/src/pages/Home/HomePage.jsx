@@ -5,7 +5,7 @@ import MainSection from '../../components/Main/MainSection';
 import SideBar from '../../components/SideBar/SideBar';
 import { Routes, Route } from 'react-router-dom';
 import ProfileSection from '../../components/Profile/ProfileSection';
-import TweetDetails from '../../components/TweetDetails/TweetDetails';
+import ChirpDetails from '../../components/ChirpDetails/ChirpDetails';
 
 const HomePage = () => {
   return (
@@ -18,7 +18,7 @@ const HomePage = () => {
               <Route path="/" element={<MainSection />} />
               <Route path="/home" element={<MainSection />} />
               <Route path="/profile/:id" element={<ProfileSection />} />
-              <Route path="/tweet/:id" element={<TweetDetails />} />
+              <Route path="/chirp/:id" element={<ChirpDetails />} />
             </Routes>
         </Grid>
         <Grid size={{xs: 0, lg: 3.34 }} className="hidden lg:block w-full relative border">

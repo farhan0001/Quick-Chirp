@@ -40,7 +40,7 @@ export default function AuthenticationModal({open, handleClose}) {
       >
         <Box sx={style}>
             <h1 className='text-center font-bold text-3xl pb-10'>
-              { location.pathname === "/signup" ? "Join X today" : "Sign in to X" }
+              { location.pathname === "/signup" ? "Join Quick Chirp today" : "Sign in to Quick Chirp" }
             </h1>
             { location.pathname === "/signup" ? <SignupForm /> : <SigninForm /> }
             <h1 className='text-center py-5 font-semibold text-[14px] text-gray-500'>

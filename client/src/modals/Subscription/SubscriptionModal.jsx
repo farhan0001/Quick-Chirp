@@ -25,10 +25,10 @@ export default function SubscriptionModal({open, handleClose}) {
     const [plan, setPlan] = React.useState("annually");
 
     const features = ['Prioritized rankings in conversations and search',
-        "See approximately twice as many tweets between ads in your for You and Following timelines",
-        "Add bold and italic text in your tweets",
+        "See approximately twice as many Chirps between ads in your for You and Following timelines",
+        "Add bold and italic text in your chirps",
         "Post longer videos and 1080p viso uploads",
-        "All the existing blue features, including Edit Tweet, Bookmark Folders and early access to new features"
+        "All the existing blue features, including Edit Chirp, Bookmark Folders and early access to new features"
     ];
 
     return (

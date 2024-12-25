@@ -8,17 +8,17 @@ import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import { TabContext, TabList, TabPanel } from '@mui/lab';
-import TweetCard from '../Cards/Tweet/TweetCard';
+import ChirpCard from '../Cards/Chirp/ChirpCard';
 import ProfileModal from '../../modals/Profile/ProfileModal';
 import { useDispatch, useSelector } from 'react-redux';
 import { findUserById, followUserAction } from '../../store/Auth/Action';
-import { getUserTweets } from '../../store/Tweet/Action';
+import { getUserChirps } from '../../store/Chirp/Action';
 
 const ProfileSection = () => {
 
     const [tabValue, setTabValue] = useState("1");
     const [openProfileModal, setopenProfileModal] = useState(false);
-    const { auth, tweet } = useSelector(store => store);
+    const { auth, chirp } = useSelector(store => store);
     const dispatch = useDispatch();
     const { id } = useParams();
 
@@ -41,7 +41,7 @@ const ProfileSection = () => {
 
     useEffect(() => {
         dispatch(findUserById(id))
-        dispatch(getUserTweets(id));
+        dispatch(getUserChirps(id));
     },[id, dispatch]);
 
     return (
@@ -124,14 +124,14 @@ const ProfileSection = () => {
                     <TabContext value={tabValue}>
                         <Box sx={{ borderBottom: 1, borderColor: 'divider', '& .MuiTab-root': {paddingBottom: "6px"} }} >
                             <TabList onChange={handleTabChange} >
-                                <Tab className='' sx={{ textTransform: "none", fontSize: "12px", fontWeight: "600", marginRight: 3.8, marginLeft: 1.2 }} label="Tweets" value="1" />
+                                <Tab className='' sx={{ textTransform: "none", fontSize: "12px", fontWeight: "600", marginRight: 3.8, marginLeft: 1.2 }} label="Chirps" value="1" />
                                 <Tab sx={{ textTransform: "none", fontSize: "12px", fontWeight: "600", marginRight: 3.8 }} label="Replies" value="2" />
                                 <Tab sx={{ textTransform: "none", fontSize: "12px", fontWeight: "600", marginRight: 3.8 }} label="Media" value="3" />
                                 <Tab sx={{ textTransform: "none", fontSize: "12px", fontWeight: "600" }} label="Likes" value="4" />
                             </TabList>
                         </Box>
                         <TabPanel value="1">
-                            {tweet?.tweets?.map((value, index) => <TweetCard item={value} key={index} />)}
+                            {chirp?.chirps?.map((value, index) => <ChirpCard item={value} key={index} />)}
                         </TabPanel>
                         <TabPanel value="2">Replies</TabPanel>
                         <TabPanel value="3">Media</TabPanel>

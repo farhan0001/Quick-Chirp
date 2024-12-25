@@ -6,13 +6,13 @@ import * as Yup from 'yup'
 import ImageIcon from '@mui/icons-material/Image';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import TagFacesIcon from '@mui/icons-material/TagFaces';
-import TweetCard from '../Cards/Tweet/TweetCard'
+import ChirpCard from '../Cards/Chirp/ChirpCard'
 import { useDispatch, useSelector } from 'react-redux'
-import { createTweet, getAllTweets } from '../../store/Tweet/Action'
+import { createChirp, getAllChirps } from '../../store/Chirp/Action'
 import { uploadToCloudinary } from '../../utils/uploadToCloudinary'
 
 const validationSchema = Yup.object().shape({
-    content: Yup.string().required("Tweet Text is requied")
+    content: Yup.string().required("Chirp Text is requied")
 })
 
 const MainSection = () => {
@@ -21,10 +21,10 @@ const MainSection = () => {
     const [selectedImg, setSelecetdImg] = useState(null);
     const [showPostPending, setShowPostPending] = useState(false);
     const dispatch = useDispatch();
-    const { tweet } = useSelector(store => store);
+    const { chirp } = useSelector(store => store);
 
     const handleSubmit = (values, actions) => {
-        dispatch(createTweet(values));
+        dispatch(createChirp(values));
         console.log("Values: ", values);
         actions.resetForm();
         setSelecetdImg("");
@@ -34,7 +34,7 @@ const MainSection = () => {
         initialValues: {
             content: "",
             image: "",
-            isTweet: true
+            isChirp: true
         },
         onSubmit: handleSubmit,
         validationSchema
@@ -59,8 +59,8 @@ const MainSection = () => {
     }, 10000);
 
     useEffect(() => {
-        dispatch(getAllTweets);
-    }, [tweet.like, tweet.retweet, dispatch, isImgUploading]);
+        dispatch(getAllChirps);
+    }, [chirp.like, chirp.rechirp, dispatch, isImgUploading]);
 
     return (
         <div>
@@ -116,7 +116,7 @@ const MainSection = () => {
                     : <section></section>
             }
             <section>
-                {tweet?.tweets?.map((value, index) => <TweetCard key={index} item={value} />)}
+                {chirp?.chirps?.map((value, index) => <ChirpCard key={index} item={value} />)}
             </section>
         </div>
     )

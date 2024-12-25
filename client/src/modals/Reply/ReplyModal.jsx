@@ -10,7 +10,7 @@ import FmdGoodIcon from '@mui/icons-material/FmdGood';
 import TagFacesIcon from '@mui/icons-material/TagFaces';
 import { useFormik } from 'formik';
 import { useDispatch } from 'react-redux';
-import { createTweetReply } from '../../store/Tweet/Action';
+import { createChirpReply } from '../../store/Chirp/Action';
 
 const style = {
   position: 'absolute',
@@ -35,7 +35,7 @@ export default function ReplyModal({item, open, handleClose}) {
 
   const handleReplySubmit = (values) => {
     handleClose();
-    dispatch(createTweetReply(values));
+    dispatch(createChirpReply(values));
   };
   const handleSelectedImg = (event) => {
     setIsImgUploading(true);
@@ -49,7 +49,7 @@ export default function ReplyModal({item, open, handleClose}) {
     initialValues: {
       content: "",
       image: "",
-      tweetId: item?.id
+      chirpId: item?.id
     },
     onSubmit: handleReplySubmit
   });
@@ -77,7 +77,7 @@ export default function ReplyModal({item, open, handleClose}) {
               </div>
 
               <div className='mt-2 ml-[10px] font-[Roboto]'>
-                <div onClick={() => navigate(`/tweet/${3}`)} className='cursor-pointer text-[15px] m-[-10px]'>
+                <div onClick={() => navigate(`/chirp/${3}`)} className='cursor-pointer text-[15px] m-[-10px]'>
                   <p className='mb-2'>Twitter Clone</p>
                 </div>
               </div>
